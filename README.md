@@ -1,7 +1,8 @@
 # DBT-Buddy
 Awareness about DBT vs Aadhaar Seeding
 
-SIH-2025-ProjectName/
+```
+SIH-2025-DBT-Buddy/
 │── README.md
 │── LICENSE
 │── .gitignore
@@ -38,3 +39,4 @@ SIH-2025-ProjectName/
 └── demo/                    # Screenshots, videos, gifs
     ├── screenshot1.png
     └── demo-video.mp4
+```
