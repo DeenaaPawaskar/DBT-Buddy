@@ -1,12 +1,12 @@
 # DBT-Buddy
-Awarness about DBT vs Adhar Seeding
+Awareness about DBT vs Aadhaar Seeding
 
 SIH-2025-ProjectName/
 │── README.md
 │── LICENSE
 │── .gitignore
 │
-├── website/                 # Your frontend website
+├── website/                 # Frontend website
 │   ├── index.html
 │   ├── style.css
 │   └── app.js
@@ -38,4 +38,3 @@ SIH-2025-ProjectName/
 └── demo/                    # Screenshots, videos, gifs
     ├── screenshot1.png
     └── demo-video.mp4
-
