@@ -5,7 +5,6 @@ Awareness about DBT vs Aadhaar Seeding
 SIH-2025-DBT-Buddy/
 │── README.md
 │── LICENSE
-│── .gitignore
 │
 ├── website/                 # Frontend website
 │   ├── index.html
