@@ -1,0 +1,23 @@
+{
+  "name": "dbt-buddy",
+  "version": "1.0.0",
+  "description": "Awareness about DBT vs Aadhaar Seeding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeenaaPawaskar/DBT-Buddy.git"
+  },
+  "author": "Deenaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeenaaPawaskar/DBT-Buddy/issues"
+  },
+  "homepage": "https://github.com/DeenaaPawaskar/DBT-Buddy#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
