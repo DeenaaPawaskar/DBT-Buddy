@@ -1,0 +1,44 @@
+{
+  "name": "School",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "School name"
+    },
+    "district": {
+      "type": "string",
+      "description": "District name"
+    },
+    "state": {
+      "type": "string",
+      "description": "State name"
+    },
+    "principal_name": {
+      "type": "string",
+      "description": "Principal name"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "School contact email"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "School contact phone"
+    },
+    "total_students": {
+      "type": "number",
+      "description": "Total number of students"
+    },
+    "dbt_ready_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of DBT ready students"
+    }
+  },
+  "required": [
+    "name",
+    "district",
+    "state"
+  ]
+}

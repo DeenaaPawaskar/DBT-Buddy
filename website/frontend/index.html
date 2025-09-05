@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBT Buddy - Digital Scholarship Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <h2>DBT Buddy</h2>
+                    <span class="badge">भारत सरकार</span>
+                </div>
+                <nav class="navbar-nav">
+                    <button class="nav-link" onclick="showSection('home')">Home</button>
+                    <button class="nav-link" onclick="showSection('student')">Student Portal</button>
+                    <button class="nav-link" onclick="showSection('school')">School Dashboard</button>
+                    <button class="nav-link" onclick="showSection('admin')">Admin Panel</button>
+                    <button class="language-toggle" onclick="toggleLanguage()">
+                        <span id="lang-text">हिंदी</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 data-en="Ensure Your Scholarship Reaches You" data-hi="सुनिश्चित करें कि आपकी छात्रवृत्ति आप तक पहुंचे">
+                                Ensure Your Scholarship Reaches You
+                            </h1>
+                            <p data-en="Learn the difference between Aadhaar-linked and DBT-enabled accounts. Get your account DBT-ready to receive government scholarships seamlessly." data-hi="आधार-लिंक्ड और डीबीटी-सक्षम खातों के बीच अंतर जानें। सरकारी छात्रवृत्ति निर्बाध रूप से प्राप्त करने के लिए अपने खाते को डीबीटी-तैयार बनाएं।">
+                                Learn the difference between Aadhaar-linked and DBT-enabled accounts. Get your account DBT-ready to receive government scholarships seamlessly.
+                            </p>
+                            <div class="hero-actions">
+                                <button class="btn btn--primary btn--lg" onclick="showSection('student')" data-en="Check Your DBT Status" data-hi="अपना डीबीटी स्टेटस चेक करें">
+                                    Check Your DBT Status
+                                </button>
+                                <button class="btn btn--outline btn--lg" onclick="scrollToSection('stats')" data-en="View Platform Stats" data-hi="प्लेटफॉर्म आंकड़े देखें">
+                                    View Platform Stats
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/dda4a609-78ec-4fa0-8a9a-44ef2a49ea39.png" alt="DBT Buddy Mobile Interface" class="hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Difference Section -->
+            <div class="difference-section">
+                <div class="container">
+                    <h2 data-en="Aadhaar Linked vs DBT Enabled: Know the Difference" data-hi="आधार लिंक्ड बनाम डीबीटी सक्षम: अंतर जानें">
+                        Aadhaar Linked vs DBT Enabled: Know the Difference
+                    </h2>
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <div class="comparison-header aadhaar-linked">
+                                <h3 data-en="Aadhaar Linked" data-hi="आधार लिंक्ड">Aadhaar Linked</h3>
+                            </div>
+                            <div class="comparison-content">
+                                <p data-en="Your bank account is connected to your Aadhaar number" data-hi="आपका बैंक खाता आपके आधार नंबर से जुड़ा है">Your bank account is connected to your Aadhaar number</p>
+                                <div class="status-indicator status--warning">
+                                    <span data-en="Not Scholarship Ready" data-hi="छात्रवृत्ति के लिए तैयार नहीं">Not Scholarship Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-card">
+                            <div class="comparison-header dbt-enabled">
+                                <h3 data-en="DBT Enabled (Seeded)" data-hi="डीबीटी सक्षम (सीडेड)">DBT Enabled (Seeded)</h3>
+                            </div>
+                            <div class="comparison-content">
+                                <p data-en="Your account is registered with NPCI for direct benefit transfers" data-hi="आपका खाता प्रत्यक्ष लाभ हस्तांतरण के लिए एनपीसीआई के साथ पंजीकृत है">Your account is registered with NPCI for direct benefit transfers</p>
+                                <div class="status-indicator status--success">
+                                    <span data-en="Scholarship Ready" data-hi="छात्रवृत्ति के लिए तैयार">Scholarship Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Dashboard -->
+            <div id="stats" class="stats-section">
+                <div class="container">
+                    <h2 data-en="Platform Adoption Statistics" data-hi="प्लेटफॉर्म अपनाने के आंकड़े">Platform Adoption Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">1,25,000</div>
+                            <div class="stat-label" data-en="Total Students" data-hi="कुल छात्र">Total Students</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">89,500</div>
+                            <div class="stat-label" data-en="DBT Ready" data-hi="डीबीटी तैयार">DBT Ready</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">35,500</div>
+                            <div class="stat-label" data-en="Pending" data-hi="लंबित">Pending</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">71.6%</div>
+                            <div class="stat-label" data-en="Success Rate" data-hi="सफलता दर">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Portal Section -->
+        <section id="student" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="Student Portal" data-hi="छात्र पोर्टल">Student Portal</h2>
+                    <p data-en="Check your DBT status and complete awareness modules" data-hi="अपना डीबीटी स्टेटस जांचें और जागरूकता मॉड्यूल पूरे करें">Check your DBT status and complete awareness modules</p>
+                </div>
+
+                <!-- DBT Status Check -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3 data-en="DBT Status Check" data-hi="डीबीटी स्टेटस जांच">DBT Status Check</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label class="form-label" data-en="Enter Aadhaar Number" data-hi="आधार नंबर दर्ज करें">Enter Aadhaar Number</label>
+                            <input type="text" id="aadhaar-input" class="form-control" placeholder="XXXX XXXX XXXX" maxlength="14">
+                        </div>
+                        <button class="btn btn--primary" onclick="checkDBTStatus()" data-en="Check Status" data-hi="स्टेटस जांचें">Check Status</button>
+                        
+                        <div id="status-result" class="status-result hidden">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awareness Hub -->
+                <div class="awareness-hub">
+                    <h3 data-en="Awareness Hub" data-hi="जागरूकता केंद्र">Awareness Hub</h3>
+                    <div class="modules-grid" id="awareness-modules">
+                        <!-- Dynamic content will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Progress Tracker -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3 data-en="Your Progress" data-hi="आपकी प्रगति">Your Progress</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="progress-tracker">
+                            <div class="progress-item completed">
+                                <div class="progress-icon">✓</div>
+                                <span data-en="Account Status Checked" data-hi="खाता स्थिति जांची गई">Account Status Checked</span>
+                            </div>
+                            <div class="progress-item" id="progress-module1">
+                                <div class="progress-icon">1</div>
+                                <span data-en="Complete Module 1" data-hi="मॉड्यूल 1 पूरा करें">Complete Module 1</span>
+                            </div>
+                            <div class="progress-item" id="progress-module2">
+                                <div class="progress-icon">2</div>
+                                <span data-en="Complete Module 2" data-hi="मॉड्यूल 2 पूरा करें">Complete Module 2</span>
+                            </div>
+                            <div class="progress-item" id="progress-module3">
+                                <div class="progress-icon">3</div>
+                                <span data-en="Complete Module 3" data-hi="मॉड्यूल 3 पूरा करें">Complete Module 3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3 data-en="Notifications & Reminders" data-hi="सूचनाएं और अनुस्मारक">Notifications & Reminders</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="notification-list">
+                            <div class="notification-item">
+                                <div class="notification-icon">📢</div>
+                                <div class="notification-content">
+                                    <p data-en="New scholarship application deadline: September 15, 2025" data-hi="नई छात्रवृत्ति आवेदन की अंतिम तिथि: 15 सितंबर, 2025">New scholarship application deadline: September 15, 2025</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon">⚠️</div>
+                                <div class="notification-content">
+                                    <p data-en="Complete DBT seeding to ensure scholarship payment" data-hi="छात्रवृत्ति भुगतान सुनिश्चित करने के लिए डीबीटी सीडिंग पूरी करें">Complete DBT seeding to ensure scholarship payment</p>
+                                    <span class="notification-time">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Dashboard Section -->
+        <section id="school" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="School Dashboard" data-hi="स्कूल डैशबोर्ड">School Dashboard</h2>
+                    <p data-en="Manage students and track DBT readiness" data-hi="छात्रों का प्रबंधन करें और डीबीटी तत्परता को ट्रैक करें">Manage students and track DBT readiness</p>
+                </div>
+
+                <!-- Login Form -->
+                <div class="card" id="school-login">
+                    <div class="card__header">
+                        <h3 data-en="School Administrator Login" data-hi="स्कूल प्रशासक लॉगिन">School Administrator Login</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label class="form-label" data-en="School Code" data-hi="स्कूल कोड">School Code</label>
+                            <input type="text" id="school-code" class="form-control" placeholder="Enter school code">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-en="Administrator ID" data-hi="प्रशासक आईडी">Administrator ID</label>
+                            <input type="text" id="admin-id" class="form-control" placeholder="Enter admin ID">
+                        </div>
+                        <button class="btn btn--primary btn--full-width" onclick="schoolLogin()" data-en="Login" data-hi="लॉगिन">Login</button>
+                    </div>
+                </div>
+
+                <!-- School Dashboard Content -->
+                <div id="school-dashboard" class="hidden">
+                    <!-- School Overview -->
+                    <div class="school-overview">
+                        <h3 id="school-name">Government High School Rajampet</h3>
+                        <div class="overview-stats">
+                            <div class="overview-card">
+                                <div class="overview-number" id="total-students">245</div>
+                                <div class="overview-label" data-en="Total Students" data-hi="कुल छात्र">Total Students</div>
+                            </div>
+                            <div class="overview-card">
+                                <div class="overview-number" id="dbt-ready">198</div>
+                                <div class="overview-label" data-en="DBT Ready" data-hi="डीबीटी तैयार">DBT Ready</div>
+                            </div>
+                            <div class="overview-card">
+                                <div class="overview-number" id="pending-students">47</div>
+                                <div class="overview-label" data-en="Pending" data-hi="लंबित">Pending</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Class-wise Progress -->
+                    <div class="card">
+                        <div class="card__header">
+                            <h3 data-en="Class-wise DBT Readiness" data-hi="कक्षावार डीबीटी तत्परता">Class-wise DBT Readiness</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="class-progress">
+                                <div class="class-item">
+                                    <div class="class-info">
+                                        <span class="class-name">Class 10</span>
+                                        <span class="class-stats">45/50 students</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span class="progress-percentage">90%</span>
+                                </div>
+                                <div class="class-item">
+                                    <div class="class-info">
+                                        <span class="class-name">Class 11</span>
+                                        <span class="class-stats">38/45 students</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 84%"></div>
+                                    </div>
+                                    <span class="progress-percentage">84%</span>
+                                </div>
+                                <div class="class-item">
+                                    <div class="class-info">
+                                        <span class="class-name">Class 12</span>
+                                        <span class="class-stats">42/48 students</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 88%"></div>
+                                    </div>
+                                    <span class="progress-percentage">88%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Management -->
+                    <div class="card">
+                        <div class="card__header">
+                            <h3 data-en="Student Management" data-hi="छात्र प्रबंधन">Student Management</h3>
+                            <div class="card-actions">
+                                <button class="btn btn--outline btn--sm" onclick="simulateCSVImport()" data-en="Import CSV" data-hi="सीएसवी आयात करें">Import CSV</button>
+                                <button class="btn btn--primary btn--sm" onclick="sendReminders()" data-en="Send Reminders" data-hi="अनुस्मारक भेजें">Send Reminders</button>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <div class="student-table">
+                                <div class="table-header">
+                                    <div class="table-cell" data-en="Name" data-hi="नाम">Name</div>
+                                    <div class="table-cell" data-en="Class" data-hi="कक्षा">Class</div>
+                                    <div class="table-cell" data-en="DBT Status" data-hi="डीबीटी स्थिति">DBT Status</div>
+                                    <div class="table-cell" data-en="Bank" data-hi="बैंक">Bank</div>
+                                    <div class="table-cell" data-en="Actions" data-hi="कार्य">Actions</div>
+                                </div>
+                                <div id="student-list">
+                                    <!-- Dynamic content will be inserted here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Panel Section -->
+        <section id="admin" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="District Administration Panel" data-hi="जिला प्रशासन पैनल">District Administration Panel</h2>
+                    <p data-en="Monitor district-wide DBT readiness and generate reports" data-hi="जिला-व्यापी डीबीटी तत्परता की निगरानी करें और रिपोर्ट तैयार करें">Monitor district-wide DBT readiness and generate reports</p>
+                </div>
+
+                <!-- District Overview -->
+                <div class="district-overview">
+                    <h3 data-en="Kadapa District Overview" data-hi="कडापा जिला अवलोकन">Kadapa District Overview</h3>
+                    <div class="district-stats">
+                        <div class="district-card">
+                            <div class="district-number">590</div>
+                            <div class="district-label" data-en="Total Students" data-hi="कुल छात्र">Total Students</div>
+                        </div>
+                        <div class="district-card">
+                            <div class="district-number">454</div>
+                            <div class="district-label" data-en="DBT Ready" data-hi="डीबीटी तैयार">DBT Ready</div>
+                        </div>
+                        <div class="district-card">
+                            <div class="district-number">136</div>
+                            <div class="district-label" data-en="Pending" data-hi="लंबित">Pending</div>
+                        </div>
+                        <div class="district-card">
+                            <div class="district-number">77%</div>
+                            <div class="district-label" data-en="Readiness Rate" data-hi="तत्परता दर">Readiness Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School Performance -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3 data-en="School Performance Metrics" data-hi="स्कूल प्रदर्शन मेट्रिक्स">School Performance Metrics</h3>
+                    </div>
+                    <div class="card__body">
+                        <div id="school-performance">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Architecture -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3 data-en="System Architecture" data-hi="सिस्टम आर्किटेक्चर">System Architecture</h3>
+                    </div>
+                    <div class="card__body">
+                        <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/0b2bc62a914012d2fba26bb9475c947b/8ced70af-49f1-44d3-8ca8-68dfde7d20fe/454441bb.png" alt="DBT Buddy System Architecture" class="architecture-img">
+                    </div>
+                </div>
+
+                <!-- Bulk Messaging -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3 data-en="Bulk Messaging Interface" data-hi="बल्क मैसेजिंग इंटरफेस">Bulk Messaging Interface</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label class="form-label" data-en="Select Target Group" data-hi="लक्षित समूह का चयन करें">Select Target Group</label>
+                            <select class="form-control" id="target-group">
+                                <option value="pending" data-en="Students with Pending DBT" data-hi="लंबित डीबीटी वाले छात्र">Students with Pending DBT</option>
+                                <option value="schools" data-en="School Administrators" data-hi="स्कूल प्रशासक">School Administrators</option>
+                                <option value="all" data-en="All Users" data-hi="सभी उपयोगकर्ता">All Users</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-en="Message" data-hi="संदेश">Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Enter your message here..."></textarea>
+                        </div>
+                        <button class="btn btn--primary" onclick="sendBulkMessage()" data-en="Send Message" data-hi="संदेश भेजें">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Module Content -->
+    <div id="module-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title"></h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--primary" onclick="completeModule()" data-en="Mark as Complete" data-hi="पूर्ण के रूप में चिह्नित करें">Mark as Complete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

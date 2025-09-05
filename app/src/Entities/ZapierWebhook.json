@@ -1,0 +1,41 @@
+{
+  "name": "ZapierWebhook",
+  "type": "object",
+  "properties": {
+    "webhook_url": {
+      "type": "string",
+      "description": "Zapier webhook URL for notifications"
+    },
+    "user_phone": {
+      "type": "string",
+      "description": "User phone number for identification"
+    },
+    "notification_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "status_changes",
+          "scheme_updates",
+          "document_reminders",
+          "payment_alerts"
+        ]
+      },
+      "description": "Types of notifications subscribed to"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether webhook is active"
+    },
+    "last_triggered": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last webhook trigger timestamp"
+    }
+  },
+  "required": [
+    "webhook_url",
+    "user_phone"
+  ]
+}

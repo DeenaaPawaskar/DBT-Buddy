@@ -1,0 +1,56 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Student full name"
+    },
+    "aadhaar_last_4": {
+      "type": "string",
+      "description": "Last 4 digits of Aadhaar for display"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Student mobile number"
+    },
+    "email": {
+      "type": "string",
+      "description": "Student email address"
+    },
+    "school_id": {
+      "type": "string",
+      "description": "Reference to school"
+    },
+    "class_grade": {
+      "type": "string",
+      "description": "Student class/grade"
+    },
+    "dbt_status": {
+      "type": "string",
+      "enum": [
+        "not_checked",
+        "ready",
+        "not_ready",
+        "pending"
+      ],
+      "default": "not_checked",
+      "description": "DBT readiness status"
+    },
+    "last_check_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Last verification date"
+    },
+    "has_opted_for_reminders": {
+      "type": "boolean",
+      "default": false,
+      "description": "WhatsApp/SMS reminder consent"
+    }
+  },
+  "required": [
+    "name",
+    "aadhaar_last_4",
+    "phone"
+  ]
+}
