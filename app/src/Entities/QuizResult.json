@@ -1,0 +1,51 @@
+{
+  "name": "QuizResult",
+  "type": "object",
+  "properties": {
+    "student_phone": {
+      "type": "string",
+      "description": "Student phone (anonymous identifier)"
+    },
+    "score": {
+      "type": "number",
+      "description": "Quiz score out of 100"
+    },
+    "total_questions": {
+      "type": "number",
+      "description": "Total number of questions"
+    },
+    "correct_answers": {
+      "type": "number",
+      "description": "Number of correct answers"
+    },
+    "time_taken_seconds": {
+      "type": "number",
+      "description": "Time taken to complete quiz"
+    },
+    "badge_earned": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "expert",
+        "hero"
+      ],
+      "description": "Badge level achieved"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "en",
+        "hi"
+      ],
+      "default": "en",
+      "description": "Quiz language"
+    }
+  },
+  "required": [
+    "student_phone",
+    "score",
+    "total_questions",
+    "correct_answers"
+  ]
+}
